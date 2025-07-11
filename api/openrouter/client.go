@@ -10,12 +10,12 @@ type Client struct {
 	OpenAIClient *openai.Client
 }
 
-func NewClient(APIKey string) *Client {
+func NewClient(EndPoint, APIKey string) *Client {
 	return &Client{
 		APIKey:   APIKey,
-		EndPoint: "https://openrouter.ai/api/v1",
+		EndPoint: EndPoint,
 		OpenAIClient: &openai.Client{
-			EndPoint: "https://openrouter.ai/api/v1",
+			EndPoint: EndPoint,
 			APIKey:   APIKey,
 			ErrResp:  &openai.ErrorResponse{},
 		},
